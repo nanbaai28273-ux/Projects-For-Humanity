@@ -303,6 +303,22 @@
             renderTotal();
         }
 
+        function renderTotal() {
+            const formatted = new Intl.NumberFormat('vi-VN').format(selectedMoney);
+            document.getElementById('final-amount').innerText = `${formatted} VND`;
+        }
+
+        function submitDonation() {
+            if (selectedMoney <= 0) {
+                alert("Please select a valid amount.");
+                return;
+            }
+            alert(`Thank you! Your donation of ${new Intl.NumberFormat('vi-VN').format(selectedMoney)} VND for:\n"${currentCampaign.title}" has been captured.`);
+        }
+
+        window.onload = () => {
+            renderActiveCampaign(campaignsData[0]);
+            renderCampaignList();
         };
     </script>
 </body>
