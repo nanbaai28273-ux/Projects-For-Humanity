@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quyên góp - Hỗ trợ trẻ em tị nạn Rohingya</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Tùy chỉnh thanh cuộn nhỏ gọn */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4 md:p-8 font-sans">
+
+    <div class="max-w-5xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
+        
+        <div class="md:col-span-6 bg-gray-100 p-6 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="rounded-2xl overflow-hidden shadow-md mb-6 relative group">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Rohingya children" class="w-full h-64 object-cover">
+                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Khẩn cấp
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        4P
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Tổ chức nhân đạo</h4>
+                        <h2 class="text-lg font-bold text-gray-800 leading-tight">Projects For Humanity</h2>
+                    </div>
+                </div>
+
+                <h1 class="text-xl md:text-2xl font-black text-gray-900 mb-3 leading-snug">
+                    Hãy cho đi một ít tiền lẻ, và cứu lấy một mạng người...
+                </h1>
+                <p class="text-sm font-semibold text-indigo-600 mb-4 bg-indigo-50 inline-block px-3 py-1 rounded-md">
+                    Cứu giúp trẻ mồ côi. Trao quyền cho góa phụ. Nuôi sống người nghèo.
+                </p>
+                <div class="space-y-3 text-gray-600 text-sm leading-relaxed">
+                    <p>Sự hỗ trợ của bạn mang đến viện trợ thiết yếu – thực phẩm, nước sạch, chỗ ở, chăm sóc y tế và giáo dục – cho những người cần nhất.</p>
+                    <p>Hãy giúp đỡ người tị nạn Rohingya, những góa phụ đang gặp khó khăn và trẻ em nghèo xây dựng một tương lai tốt đẹp hơn.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 flex justify-between items-center">
+                <span>⚡ Kết nối an toàn 256-bit</span>
+                <a href="#" class="hover:underline text-gray-500">Chính sách bảo mật</a>
+            </div>
+        </div>
+
+        <div class="md:col-span-6 p-6 md:p-10 flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-100">
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <button class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
+                    <h3 class="text-base font-bold text-gray-800">Chọn phương thức thanh toán</h3>
+                    <div class="w-5"></div> </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Số tiền đóng góp (VND)</label>
+                    <div class="grid grid-cols-3 gap-2 mb-3">
+                        <button type="button" onclick="setAmount(500000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm">500.000</button>
+                        <button type="button" onclick="setAmount(1000000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm">1.000.000</button>
+                        <button type="button" onclick="setAmount(2000000)" class="amt-btn py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold bg-indigo-50/50 transition text-sm">2.000.000</button>
+                    </div>
+                    <div class="relative">
+                        <input type="number" id="custom-amount" oninput="updateCustomAmount()" placeholder="Nhập số tiền khác..." 
+                               class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none font-semibold text-gray-800 text-sm">
+                        <span class="absolute right-4 top-3.5 text-xs font-bold text-gray-400">VND</span>
+                    </div>
+                </div>
+
+                <div class="mb-6 space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Phương thức</label>
+                    
+                    <label class="flex items-center justify-between p-3.5 border-2 border-indigo-600 rounded-xl bg-indigo-50/30 cursor-pointer transition">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="payment_method" value="card" checked class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <i class="fa-solid fa-credit-card text-gray-500"></i> Thẻ tín dụng / Ghi nợ
+                            </span>
+                        </div>
+                        <div class="flex gap-1 text-lg text-gray-400">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3.5 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="payment_method" value="googlepay" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <i class="fa-brands fa-google text-gray-500"></i> Google Pay
+                            </span>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="card-fields" class="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-100 mb-6">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1">Số thẻ</label>
+                        <div class="relative">
+                            <input type="text" placeholder="4242 •••• •••• 4242" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500">
+                            <i class="fa-solid fa-credit-card absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1">Hạn sử dụng</label>
+                            <input type="text" placeholder="MM / YY" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500 text-center">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1 flex items-center justify-between">
+                                CVC <i class="fa-regular fa-circle-question text-gray-400 cursor-pointer"></i>
+                            </label>
+                            <input type="text" placeholder="123" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500 text-center">
+                        </div>
+                    </div>
+                </div>
+
+                <label class="flex items-start gap-3 cursor-pointer select-none mb-6">
+                    <input type="checkbox" id="cover-fee" onchange="toggleFee()" class="mt-0.5 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                    <span class="text-xs text-gray-500 leading-tight">
+                        Bao gồm chi phí giao dịch (<span class="font-semibold text-gray-700">+45.000 VND</span>) để tổ chức nhận được trọn vẹn 100% số tiền của bạn.
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between mb-4 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Tổng cộng:</span>
+                    <span id="total-display" class="text-lg font-black text-indigo-600">2.000.000 VND<span class="text-xs font-normal text-gray-400">/tháng</span></span>
+                </div>
+
+                <button type="button" onclick="handleDonate()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-200 transition-all transform active:scale-[0.98] text-center block">
+                    Quyên góp (Donate)
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentAmount = 2000000;
+        let baseFee = 45000;
+        let isCoverFee = false;
+
+        // Xử lý chọn các nút số tiền cố định
+        function setAmount(amount) {
+            currentAmount = amount;
+            document.getElementById('custom-amount').value = ''; // Reset ô tự nhập
+            
+            // Đổi màu active cho các nút số tiền
+            const buttons = document.querySelectorAll('.amt-btn');
+            buttons.forEach(btn => {
+                if (parseInt(btn.innerText.replace(/\./g, '')) === amount) {
+                    btn.className = "amt-btn py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold bg-indigo-50/50 transition text-sm";
+                } else {
+                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm";
+                }
+            });
+            updateTotal();
+        }
+
+        // Xử lý khi người dùng tự nhập số tiền khác
+        function updateCustomAmount() {
+            const val = document.getElementById('custom-amount').value;
+            if(val) {
+                currentAmount = parseInt(val);
+                // Bỏ active tất cả các nút cố định
+                document.querySelectorAll('.amt-btn').forEach(btn => {
+                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm";
+                });
+            } else {
+                currentAmount = 0;
+            }
+            updateTotal();
+        }
+
+        // Bật/tắt phí giao dịch
+        function toggleFee() {
+            isCoverFee = document.getElementById('cover-fee').checked;
+            updateTotal();
+        }
+
+        // Cập nhật lại chuỗi hiển thị tổng số tiền
+        function updateTotal() {
+            let total = currentAmount;
+            if(isCoverFee && currentAmount > 0) {
+                total += baseFee;
+            }
+            // Định dạng hiển thị tiền tệ dạng: 2.000.000
+            const formatted = new Intl.NumberFormat('vi-VN').format(total);
+            document.getElementById('total-display').innerHTML = `${formatted} VND<span class="text-xs font-normal text-gray-400">/tháng</span>`;
+        }
+
+        // Xử lý ẩn/hiện form điền thẻ khi chuyển giữa Credit Card và Google Pay
+        document.querySelectorAll('input[name="payment_method"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const cardFields = document.getElementById('card-fields');
+                // Đổi border của wrapper phương thức
+                document.querySelectorAll('input[name="payment_method"]').forEach(r => {
+                    r.closest('label').className = "flex items-center justify-between p-3.5 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition";
+                });
+                e.target.closest('label').className = "flex items-center justify-between p-3.5 border-2 border-indigo-600 rounded-xl bg-indigo-50/30 cursor-pointer transition";
+
+                if(e.target.value === 'card') {
+                    cardFields.style.display = 'block';
+                } else {
+                    cardFields.style.display = 'none'; // Ẩn khi chọn Google Pay
+                }
+            });
+        });
+
+        // Sự kiện khi bấm nút Donate
+        function handleDonate() {
+            if(currentAmount <= 0) {
+                alert('Vui lòng chọn hoặc nhập số tiền quyên góp hợp lệ.');
+                return;
+            }
+            alert(`Cảm ơn bạn! Hệ thống đang kết nối cổng thanh toán để xử lý giao dịch quyên góp ${new Intl.NumberFormat('vi-VN').format(currentAmount)} VND.`);
+        }
+    </script>
+</body>
+</html>
