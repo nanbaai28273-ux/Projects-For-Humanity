@@ -1,232 +1,352 @@
+Để đưa logo mới thiết kế vào trang web một cách chuẩn chỉ và đẹp mắt nhất, tôi đã cập nhật mã nguồn của bạn.
+
+Vì ảnh logo có nền sáng dạng banner ngang, tôi đã tối ưu lại **Header** (giúp logo hiển thị rõ ràng, không bị méo) và thay thế phần ảnh lỗi ở **Footer** bằng khung chứa logo đồng bộ, sang trọng.
+
+Dưới đây là toàn bộ mã nguồn hoàn chỉnh đã được tích hợp logo mới, bạn chỉ cần copy và ghi đè vào file `index.html` của mình:
+
+```html
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quyên góp - Hỗ trợ trẻ em tị nạn Rohingya</title>
+    <title>One Chance Global - Give to Save a Life</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Tùy chỉnh thanh cuộn nhỏ gọn */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4 md:p-8 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <div class="max-w-5xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
-        
-        <div class="md:col-span-6 bg-gray-100 p-6 md:p-10 flex flex-col justify-between">
-            <div>
-                <div class="rounded-2xl overflow-hidden shadow-md mb-6 relative group">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" 
-                         alt="Rohingya children" class="w-full h-64 object-cover">
-                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                        Khẩn cấp
-                    </span>
-                </div>
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center h-full py-2">
+                <img src="https://images.gemini.googleusercontent.com/art/v1/render?art_id=9ca6e001ba90fb0a&m=0&w=1200&h=630" alt="OneChanceGlobal Logo" class="h-14 md:h-16 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-gray-600">
+                <a href="#" class="text-indigo-600">Home</a>
+                <a href="#campaigns-section" class="hover:text-indigo-600 transition">Our Campaigns</a>
+            </nav>
+            <a href="#donate-box" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-md transition">
+                Donate Now
+            </a>
+        </div>
+    </header>
 
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
-                        4P
+    <section class="relative bg-gray-900 text-white py-20 min-h-[45vh] flex items-center">
+        <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="relative max-w-7xl mx-auto px-6 w-full text-center space-y-4">
+            <span class="text-indigo-400 font-bold text-xs uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20">Current Campaigns</span>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight">Give a little loose change, <span class="text-indigo-400">save a life.</span></h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">Your support delivers essential aid—food, clean water, shelter, medical care, and education—to those who need it most. Help us build a better future.</p>
+        </div>
+    </section>
+
+    <section id="about" class="py-8 md:py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground">About One Chance Foundation</h2>
+                <p class="text-lg text-muted-foreground leading-relaxed">One Chance Foundation is a humanitarian organization dedicated to saving the lives of children and vulnerable people across Africa who are suffering from severe illnesses, life-threatening conditions, extreme poverty, and urgent medical needs. We provide emergency surgeries, treatments, hospital care, nutrition, and hope — one life at a time.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pt-4 md:pt-8">
+                    <div class="flex flex-col items-center gap-3 p-6">
+                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope w-7 h-7 text-primary"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+                        </div>
+                        <h3 class="font-semibold text-foreground">Life-Saving Medical Care</h3>
+                        <p class="text-sm text-muted-foreground text-center">Emergency surgeries, treatments, and hospital care for the most critical cases.</p>
                     </div>
-                    <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Tổ chức nhân đạo</h4>
-                        <h2 class="text-lg font-bold text-gray-800 leading-tight">Projects For Humanity</h2>
+                    <div class="flex flex-col items-center gap-3 p-6">
+                        <div class="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-7 h-7 text-accent"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                        </div>
+                        <h3 class="font-semibold text-foreground">Direct Impact</h3>
+                        <p class="text-sm text-muted-foreground text-center">Every dollar goes directly to saving a child's life. No middlemen, no waste.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 p-6">
+                        <div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-7 h-7 text-secondary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="font-semibold text-foreground">Global Community</h3>
+                        <p class="text-sm text-muted-foreground text-center">Join thousands of compassionate donors changing lives across Africa.</p>
                     </div>
                 </div>
-
-                <h1 class="text-xl md:text-2xl font-black text-gray-900 mb-3 leading-snug">
-                    Hãy cho đi một ít tiền lẻ, và cứu lấy một mạng người...
-                </h1>
-                <p class="text-sm font-semibold text-indigo-600 mb-4 bg-indigo-50 inline-block px-3 py-1 rounded-md">
-                    Cứu giúp trẻ mồ côi. Trao quyền cho góa phụ. Nuôi sống người nghèo.
-                </p>
-                <div class="space-y-3 text-gray-600 text-sm leading-relaxed">
-                    <p>Sự hỗ trợ của bạn mang đến viện trợ thiết yếu – thực phẩm, nước sạch, chỗ ở, chăm sóc y tế và giáo dục – cho những người cần nhất.</p>
-                    <p>Hãy giúp đỡ người tị nạn Rohingya, những góa phụ đang gặp khó khăn và trẻ em nghèo xây dựng một tương lai tốt đẹp hơn.</p>
-                </div>
-            </div>
-
-            <div class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 flex justify-between items-center">
-                <span>⚡ Kết nối an toàn 256-bit</span>
-                <a href="#" class="hover:underline text-gray-500">Chính sách bảo mật</a>
             </div>
         </div>
+    </section>
 
-        <div class="md:col-span-6 p-6 md:p-10 flex flex-col justify-between border-t md:border-t-0 md:border-l border-gray-100">
-            <div>
-                <div class="flex items-center justify-between mb-6">
-                    <button class="text-gray-400 hover:text-gray-600 transition">
-                        <i class="fa-solid fa-arrow-left text-lg"></i>
-                    </button>
-                    <h3 class="text-base font-bold text-gray-800">Chọn phương thức thanh toán</h3>
-                    <div class="w-5"></div> </div>
+    <main id="campaigns-section" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <div class="lg:col-span-7 space-y-12">
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-200/60 space-y-6">
+                    <div class="relative h-96 w-full rounded-2xl overflow-hidden">
+                        <img id="main-cam-image" src="" alt="Campaign Image" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span id="main-cam-tag" class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-md uppercase"></span>
+                            <span id="main-cam-location" class="text-sm text-gray-400"></span>
+                        </div>
+                        <h2 id="main-cam-title" class="text-2xl md:text-3xl font-black text-gray-900 leading-tight"></h2>
+                        <p id="main-cam-desc" class="text-gray-600 leading-relaxed text-sm md:text-base"></p>
+                    </div>
 
-                <div class="mb-6">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Số tiền đóng góp (VND)</label>
-                    <div class="grid grid-cols-3 gap-2 mb-3">
-                        <button type="button" onclick="setAmount(500000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm">500.000</button>
-                        <button type="button" onclick="setAmount(1000000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm">1.000.000</button>
-                        <button type="button" onclick="setAmount(2000000)" class="amt-btn py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold bg-indigo-50/50 transition text-sm">2.000.000</button>
+                    <div class="space-y-2 pt-2 border-t border-gray-100">
+                        <div class="flex justify-between text-sm font-bold">
+                            <span class="text-gray-500">Raised: <span id="main-cam-raised" class="text-indigo-600"></span></span>
+                            <span id="main-cam-percent" class="text-gray-950"></span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+                            <div id="main-cam-progress-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-400">
+                            <span id="main-cam-goal"></span>
+                            <span>Updated 5 mins ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-black text-gray-900 flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-indigo-600 rounded-full"></span>
+                        Explore More Campaigns:
+                    </h3>
+                    <div id="campaign-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+            </div>
+
+            <div id="donate-box" class="lg:col-span-5 bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-200/80 sticky top-24">
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">Join our mission</h3>
+                    <p class="text-xs text-gray-400">Supporting: <span id="donate-box-cam-title" class="text-indigo-600 font-semibold"></span></p>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" onclick="selectAmount(200000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-600 text-sm">200k</button>
+                        <button type="button" onclick="selectAmount(500000)" class="amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-600 text-sm">500k</button>
+                        <button type="button" onclick="selectAmount(1000000)" class="amt-btn py-3 border-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 rounded-xl font-bold text-sm">1 Triệu</button>
                     </div>
                     <div class="relative">
-                        <input type="number" id="custom-amount" oninput="updateCustomAmount()" placeholder="Nhập số tiền khác..." 
-                               class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none font-semibold text-gray-800 text-sm">
+                        <input type="number" id="custom-money" oninput="customAmountInput()" placeholder="Nhập số tiền khác..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-indigo-600 focus:bg-white font-bold text-sm text-gray-800">
                         <span class="absolute right-4 top-3.5 text-xs font-bold text-gray-400">VND</span>
                     </div>
                 </div>
 
-                <div class="mb-6 space-y-2">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Phương thức</label>
-                    
-                    <label class="flex items-center justify-between p-3.5 border-2 border-indigo-600 rounded-xl bg-indigo-50/30 cursor-pointer transition">
-                        <div class="flex items-center gap-3">
-                            <input type="radio" name="payment_method" value="card" checked class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-sm font-bold text-gray-800 flex items-center gap-2">
-                                <i class="fa-solid fa-credit-card text-gray-500"></i> Thẻ tín dụng / Ghi nợ
-                            </span>
-                        </div>
-                        <div class="flex gap-1 text-lg text-gray-400">
-                            <i class="fa-brands fa-cc-visa"></i>
-                            <i class="fa-brands fa-cc-mastercard"></i>
-                        </div>
-                    </label>
-
-                    <label class="flex items-center justify-between p-3.5 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition">
-                        <div class="flex items-center gap-3">
-                            <input type="radio" name="payment_method" value="googlepay" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-sm font-bold text-gray-800 flex items-center gap-2">
-                                <i class="fa-brands fa-google text-gray-500"></i> Google Pay
-                            </span>
-                        </div>
-                    </label>
-                </div>
-
-                <div id="card-fields" class="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-100 mb-6">
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1">Số thẻ</label>
-                        <div class="relative">
-                            <input type="text" placeholder="4242 •••• •••• 4242" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500">
-                            <i class="fa-solid fa-credit-card absolute right-3 top-3 text-gray-400"></i>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1">Hạn sử dụng</label>
-                            <input type="text" placeholder="MM / YY" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500 text-center">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-gray-500 uppercase mb-1 flex items-center justify-between">
-                                CVC <i class="fa-regular fa-circle-question text-gray-400 cursor-pointer"></i>
-                            </label>
-                            <input type="text" placeholder="123" class="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-indigo-500 text-center">
+                <div class="space-y-3 mb-6">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400">Card details</label>
+                    <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 divide-y divide-gray-200">
+                        <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Card Number</label><input type="text" placeholder="4242 4242 4242 4242" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
+                        <div class="grid grid-cols-2 divide-x divide-gray-200">
+                            <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Expires</label><input type="text" placeholder="12 / 29" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
+                            <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">CVC</label><input type="text" placeholder="123" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
                         </div>
                     </div>
                 </div>
 
-                <label class="flex items-start gap-3 cursor-pointer select-none mb-6">
-                    <input type="checkbox" id="cover-fee" onchange="toggleFee()" class="mt-0.5 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                    <span class="text-xs text-gray-500 leading-tight">
-                        Bao gồm chi phí giao dịch (<span class="font-semibold text-gray-700">+45.000 VND</span>) để tổ chức nhận được trọn vẹn 100% số tiền của bạn.
-                    </span>
-                </label>
-            </div>
-
-            <div>
-                <div class="flex items-center justify-between mb-4 bg-gray-50 p-3 rounded-xl border border-gray-100">
-                    <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Tổng cộng:</span>
-                    <span id="total-display" class="text-lg font-black text-indigo-600">2.000.000 VND<span class="text-xs font-normal text-gray-400">/tháng</span></span>
+                <div class="flex items-center justify-between p-4 bg-indigo-50/50 rounded-2xl mb-4 border border-indigo-100">
+                    <span class="text-xs font-bold text-indigo-900/60 uppercase">Total Donation:</span>
+                    <span id="final-amount" class="text-xl font-black text-indigo-700">1.000.000 VND</span>
                 </div>
 
-                <button type="button" onclick="handleDonate()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-200 transition-all transform active:scale-[0.98] text-center block">
-                    Quyên góp (Donate)
+                <button type="button" onclick="submitDonation()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-100 transition transform active:scale-[0.98] text-center">
+                    Donate Now
                 </button>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 py-12 md:py-16 text-gray-400">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                    <div class="text-center md:text-left">
+                        <div class="inline-flex items-center justify-center bg-white rounded-xl px-4 py-2 mb-3 shadow-lg">
+                            <img src="https://images.gemini.googleusercontent.com/art/v1/render?art_id=9ca6e001ba90fb0a&m=0&w=1200&h=630" alt="One Chance Foundation" class="h-12 w-auto object-contain">
+                        </div>
+                        <p class="text-gray-500 text-xs italic tracking-wide mb-4">Giving Africa's Children a Fighting Chance.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">One Chance Foundation is a humanitarian organization dedicated to providing life-saving medical care, surgeries, and support to children and vulnerable people across Africa.</p>
+                        <div class="mt-4 space-y-1 text-gray-500 text-xs">
+                            <p>EIN: 98-1889126</p>
+                            <p><a href="mailto:support@onechancefoundation.org" class="hover:text-white transition-colors">support@onechancefoundation.org</a></p>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-white font-semibold text-sm mb-4">Navigation</h4>
+                        <nav class="flex flex-col gap-2 text-sm text-gray-400">
+                            <a class="hover:text-white transition-colors" href="#">Home</a>
+                            <a href="#campaigns-section" class="hover:text-white transition-colors">Active Campaigns</a>
+                            <a href="#about" class="hover:text-white transition-colors">About Us</a>
+                        </nav>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-white font-semibold text-sm mb-4">Legal</h4>
+                        <nav class="flex flex-col gap-2 text-sm text-gray-400">
+                            <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                            <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                            <a class="hover:text-white transition-colors" href="#">Refund Policy</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 py-6 border-t border-b border-gray-800 mb-8">
+                    <div class="flex items-center gap-2 text-xs"><i class="fa-solid fa-shield-halved text-indigo-400"></i><span>Payments via PayPal</span></div>
+                    <div class="flex items-center gap-2 text-xs"><i class="fa-solid fa-lock text-indigo-400"></i><span>Protected Checkout</span></div>
+                    <div class="flex items-center gap-2 text-xs"><i class="fa-solid fa-hand-holding-heart text-indigo-400"></i><span>Verified Humanitarian Organization</span></div>
+                </div>
+                <div class="text-center">
+                    <p class="text-gray-600 text-xs">© 2026 One Chance Foundation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        let currentAmount = 2000000;
-        let baseFee = 45000;
-        let isCoverFee = false;
+        const campaignsData = [
+            {
+                id: "amara",
+                tag: "Amara Project",
+                location: "Rohingya Refugee Camp",
+                title: "Save Orphans. Empower Widows. Feed the Poor.",
+                desc: "Your support delivers essential aid—food, clean water, shelter, medical care, and education—to Rohingya refugees, struggling widows, and impoverished children. Together, we can help them build a better future.",
+                image: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=80",
+                goal: 1000000000,
+                raised: 650000000
+            },
+            {
+                id: "yemen-crisis",
+                tag: "Yemen Crisis",
+                location: "Sanaa, Yemen",
+                title: "Emergency Food & Medical Aid for Malnourished Children",
+                desc: "Millions of children in Yemen are facing severe acute malnutrition due to ongoing conflict. This project delivers high-protein therapeutic milk, critical medical supplies, and urgent nutrition baskets directly to families in desperate need.",
+                image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80",
+                goal: 500000000,
+                raised: 410000000
+            },
+            {
+                id: "clean-water",
+                tag: "Water Crisis",
+                location: "Gaza Strip",
+                title: "Providing Clean & Safe Drinking Water Stations",
+                desc: "Clean water is a luxury for families living under blockade. We are building solar-powered water purification units and trucking clean, drinkable water to schools and heavily crowded refugee settlements to prevent deadly waterborne diseases.",
+                image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=80",
+                goal: 750000000,
+                raised: 280000000
+            },
+            {
+                id: "education-children",
+                tag: "Education",
+                location: "Nairobi, Kenya",
+                title: "Sponsor a Child's Education and School Meals",
+                desc: "Education is the ultimate way to break the cycle of poverty. Your donations fund complete school uniforms, learning materials, and nutritious daily hot lunches for vulnerable children living in underprivileged slum regions.",
+                image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80",
+                goal: 300000000,
+                raised: 290000000
+            }
+        ];
 
-        // Xử lý chọn các nút số tiền cố định
-        function setAmount(amount) {
-            currentAmount = amount;
-            document.getElementById('custom-amount').value = ''; // Reset ô tự nhập
+        let selectedMoney = 1000000;
+        let currentCampaign = campaignsData[0];
+
+        function renderActiveCampaign(campaign) {
+            currentCampaign = campaign;
+
+            document.getElementById('main-cam-image').src = campaign.image;
+            document.getElementById('main-cam-tag').innerText = campaign.tag;
+            document.getElementById('main-cam-location').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${campaign.location}`;
+            document.getElementById('main-cam-title').innerText = campaign.title;
+            document.getElementById('main-cam-desc').innerText = campaign.desc;
+
+            const percent = Math.round((campaign.raised / campaign.goal) * 100);
+            const formatRaised = new Intl.NumberFormat('vi-VN').format(campaign.raised);
+            const formatGoal = new Intl.NumberFormat('vi-VN').format(campaign.goal);
+
+            document.getElementById('main-cam-raised').innerText = `${formatRaised} VND`;
+            document.getElementById('main-cam-percent').innerText = `${percent}%`;
+            document.getElementById('main-cam-progress-bar').style.width = `${percent}%`;
+            document.getElementById('main-cam-goal').innerText = `Goal: ${formatGoal} VND`;
+
+            document.getElementById('donate-box-cam-title').innerText = campaign.title;
+        }
+
+        function renderCampaignList() {
+            const container = document.getElementById('campaign-list-container');
+            container.innerHTML = "";
+
+            campaignsData.forEach(cam => {
+                const percent = Math.round((cam.raised / cam.goal) * 100);
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-2xl border border-gray-200 hover:border-indigo-500 shadow-sm cursor-pointer transition flex gap-4 items-center";
+                
+                card.onclick = () => {
+                    renderActiveCampaign(cam);
+                    document.getElementById('campaigns-section').scrollIntoView({ behavior: 'smooth' });
+                };
+
+                card.innerHTML = `
+                    <img src="${cam.image}" alt="" class="w-20 h-20 object-cover rounded-xl shrink-0">
+                    <div class="space-y-1 w-full min-w-0">
+                        <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">${cam.tag}</span>
+                        <h4 class="text-sm font-bold text-gray-900 truncate">${cam.title}</h4>
+                        <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
+                            <span>Progress: <strong>${percent}%</strong></span>
+                            <span class="text-indigo-600 font-semibold">View →</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function selectAmount(amount) {
+            selectedMoney = amount;
+            document.getElementById('custom-money').value = '';
             
-            // Đổi màu active cho các nút số tiền
             const buttons = document.querySelectorAll('.amt-btn');
             buttons.forEach(btn => {
-                if (parseInt(btn.innerText.replace(/\./g, '')) === amount) {
-                    btn.className = "amt-btn py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold bg-indigo-50/50 transition text-sm";
+                if(parseInt(btn.innerText.replace(/[^0-9]/g, '')) * 1000 === amount || (amount === 1000000 && btn.innerText.includes('1 Triệu'))) {
+                    btn.className = "amt-btn py-3 border-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 rounded-xl font-bold text-sm";
                 } else {
-                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm";
+                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-600 text-sm";
                 }
             });
-            updateTotal();
+            renderTotal();
         }
 
-        // Xử lý khi người dùng tự nhập số tiền khác
-        function updateCustomAmount() {
-            const val = document.getElementById('custom-amount').value;
-            if(val) {
-                currentAmount = parseInt(val);
-                // Bỏ active tất cả các nút cố định
+        function customAmountInput() {
+            const inputVal = document.getElementById('custom-money').value;
+            if(inputVal) {
+                selectedMoney = parseInt(inputVal);
                 document.querySelectorAll('.amt-btn').forEach(btn => {
-                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition text-sm";
+                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 text-sm";
                 });
             } else {
-                currentAmount = 0;
+                selectedMoney = 0;
             }
-            updateTotal();
+            renderTotal();
         }
 
-        // Bật/tắt phí giao dịch
-        function toggleFee() {
-            isCoverFee = document.getElementById('cover-fee').checked;
-            updateTotal();
+        function renderTotal() {
+            const formatted = new Intl.NumberFormat('vi-VN').format(selectedMoney);
+            document.getElementById('final-amount').innerText = `${formatted} VND`;
         }
 
-        // Cập nhật lại chuỗi hiển thị tổng số tiền
-        function updateTotal() {
-            let total = currentAmount;
-            if(isCoverFee && currentAmount > 0) {
-                total += baseFee;
-            }
-            // Định dạng hiển thị tiền tệ dạng: 2.000.000
-            const formatted = new Intl.NumberFormat('vi-VN').format(total);
-            document.getElementById('total-display').innerHTML = `${formatted} VND<span class="text-xs font-normal text-gray-400">/tháng</span>`;
-        }
-
-        // Xử lý ẩn/hiện form điền thẻ khi chuyển giữa Credit Card và Google Pay
-        document.querySelectorAll('input[name="payment_method"]').forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                const cardFields = document.getElementById('card-fields');
-                // Đổi border của wrapper phương thức
-                document.querySelectorAll('input[name="payment_method"]').forEach(r => {
-                    r.closest('label').className = "flex items-center justify-between p-3.5 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition";
-                });
-                e.target.closest('label').className = "flex items-center justify-between p-3.5 border-2 border-indigo-600 rounded-xl bg-indigo-50/30 cursor-pointer transition";
-
-                if(e.target.value === 'card') {
-                    cardFields.style.display = 'block';
-                } else {
-                    cardFields.style.display = 'none'; // Ẩn khi chọn Google Pay
-                }
-            });
-        });
-
-        // Sự kiện khi bấm nút Donate
-        function handleDonate() {
-            if(currentAmount <= 0) {
-                alert('Vui lòng chọn hoặc nhập số tiền quyên góp hợp lệ.');
+        function submitDonation() {
+            if (selectedMoney <= 0) {
+                alert("Please select a valid amount.");
                 return;
             }
-            alert(`Cảm ơn bạn! Hệ thống đang kết nối cổng thanh toán để xử lý giao dịch quyên góp ${new Intl.NumberFormat('vi-VN').format(currentAmount)} VND.`);
+            alert(`Thank you! Your donation of ${new Intl.NumberFormat('vi-VN').format(selectedMoney)} VND for:\n"${currentCampaign.title}" has been captured.`);
         }
+
+        window.onload = () => {
+            renderActiveCampaign(campaignsData[0]);
+            renderCampaignList();
+        };
     </script>
 </body>
 </html>
+
+```
