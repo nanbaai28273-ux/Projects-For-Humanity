@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Chance Global - Các Chiến Dịch Cứu Trợ</title>
+    <title>One Chance Global - Give to Save a Life</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -19,21 +19,21 @@
                 <span class="w-2 h-2 rounded-full bg-red-500 self-end mb-2"></span>
             </a>
             <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-gray-600">
-                <a href="#" class="text-indigo-600">Trang chủ</a>
-                <a href="#campaigns-section" class="hover:text-indigo-600 transition">Chiến dịch của chúng tôi</a>
+                <a href="#" class="text-indigo-600">Home</a>
+                <a href="#campaigns-section" class="hover:text-indigo-600 transition">Our Campaigns</a>
             </nav>
             <a href="#donate-box" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-md transition">
-                Quyên Góp Ngay
+                Donate Now
             </a>
         </div>
     </header>
 
-    <section class="relative bg-gray-900 text-white py-20 min-h-[40vh] flex items-center">
+    <section class="relative bg-gray-900 text-white py-20 min-h-[45vh] flex items-center">
         <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="relative max-w-7xl mx-auto px-6 w-full text-center space-y-4">
-            <span class="text-indigo-400 font-bold text-xs uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20">Danh sách chiến dịch</span>
-            <h1 class="text-3xl md:text-5xl font-black tracking-tight">Hãy Lựa Chọn Nơi Bạn Muốn Gieo Hy Vọng</h1>
-            <p class="text-gray-300 max-w-xl mx-auto text-sm md:text-base font-light">Sự minh bạch và tình yêu thương của bạn sẽ trực tiếp thay đổi cuộc đời của những đứa trẻ này.</p>
+            <span class="text-indigo-400 font-bold text-xs uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20">Current Campaigns</span>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight">Give a little loose change, <span class="text-indigo-400">save a life.</span></h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">Your support delivers essential aid—food, clean water, shelter, medical care, and education—to those who need it most. Help us build a better future.</p>
         </div>
     </section>
 
@@ -58,7 +58,7 @@
 
                     <div class="space-y-2 pt-2 border-t border-gray-100">
                         <div class="flex justify-between text-sm font-bold">
-                            <span class="text-gray-500">Đã gom được: <span id="main-cam-raised" class="text-indigo-600"></span></span>
+                            <span class="text-gray-500">Raised: <span id="main-cam-raised" class="text-indigo-600"></span></span>
                             <span id="main-cam-percent" class="text-gray-950"></span>
                         </div>
                         <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
@@ -66,7 +66,7 @@
                         </div>
                         <div class="flex justify-between text-xs text-gray-400">
                             <span id="main-cam-goal"></span>
-                            <span>Cập nhật 5 phút trước</span>
+                            <span>Updated 5 mins ago</span>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="space-y-4">
                     <h3 class="text-xl font-black text-gray-900 flex items-center gap-2">
                         <span class="w-1.5 h-5 bg-indigo-600 rounded-full"></span>
-                        Xem và chọn chiến dịch cứu trợ khác:
+                        Explore More Campaigns:
                     </h3>
                     
                     <div id="campaign-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -85,8 +85,8 @@
 
             <div id="donate-box" class="lg:col-span-5 bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-200/80 sticky top-24">
                 <div class="mb-4">
-                    <h3 class="text-xl font-bold text-gray-900">Gửi khoản đóng góp của bạn</h3>
-                    <p class="text-xs text-gray-400">Đang đóng góp cho: <span id="donate-box-cam-title" class="text-indigo-600 font-semibold"></span></p>
+                    <h3 class="text-xl font-bold text-gray-900">Join our mission</h3>
+                    <p class="text-xs text-gray-400">Supporting: <span id="donate-box-cam-title" class="text-indigo-600 font-semibold"></span></p>
                 </div>
 
                 <div class="space-y-4 mb-6">
@@ -102,23 +102,23 @@
                 </div>
 
                 <div class="space-y-3 mb-6">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400">Thông tin thẻ tín dụng</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400">Card details</label>
                     <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 divide-y divide-gray-200">
-                        <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Số thẻ</label><input type="text" placeholder="4242 4242 4242 4242" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
+                        <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Card Number</label><input type="text" placeholder="4242 4242 4242 4242" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
                         <div class="grid grid-cols-2 divide-x divide-gray-200">
-                            <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Hạn dùng</label><input type="text" placeholder="12 / 29" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
+                            <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">Expires</label><input type="text" placeholder="12 / 29" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
                             <div class="p-3"><label class="block text-[10px] font-bold text-gray-400 uppercase">CVC</label><input type="text" placeholder="123" class="w-full bg-transparent outline-none text-sm font-semibold"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex items-center justify-between p-4 bg-indigo-50/50 rounded-2xl mb-4 border border-indigo-100">
-                    <span class="text-xs font-bold text-indigo-900/60 uppercase">Tổng số tiền:</span>
+                    <span class="text-xs font-bold text-indigo-900/60 uppercase">Total Donation:</span>
                     <span id="final-amount" class="text-xl font-black text-indigo-700">1.000.000 VND</span>
                 </div>
 
                 <button type="button" onclick="submitDonation()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-100 transition transform active:scale-[0.98] text-center">
-                    Xác Nhận Quyên Góp
+                    Donate Now
                 </button>
             </div>
 
@@ -126,48 +126,47 @@
     </main>
 
     <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
-        © 2026 OneChanceGlobal Replica. Tất cả các quyền được bảo lưu.
+        © 2026 OneChanceGlobal Replica. All rights reserved.
     </footer>
 
     <script>
-        // MẢNG DỮ LIỆU CHỨA CÁC CHIẾN DỊCH (Bạn có thể tự do thêm, sửa, xóa bớt ở đây)
         const campaignsData = [
             {
                 id: "amara",
-                tag: "Chiến dịch Amara",
-                location: "Trại tị nạn Rohingya",
-                title: "Cứu giúp trẻ mồ côi & trao quyền cho các góa phụ",
-                desc: "Dự án tập trung vào việc tái thiết cuộc sống cho hàng trăm phụ nữ mất chồng và trẻ nhỏ không nơi nương tựa tại khu vực biên giới. Chúng tôi cung cấp các gói thực phẩm thiết yếu dài hạn và dựng nhà tạm trú an toàn qua mùa mưa bão sắp tới.",
+                tag: "Amara Project",
+                location: "Rohingya Refugee Camp",
+                title: "Save Orphans. Empower Widows. Feed the Poor.",
+                desc: "Your support delivers essential aid—food, clean water, shelter, medical care, and education—to Rohingya refugees, struggling widows, and impoverished children. Together, we can help them build a better future.",
                 image: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=80",
                 goal: 1000000000,
                 raised: 650000000
             },
             {
-                id: "yemen-food",
-                tag: "Khẩn cấp Yemen",
+                id: "yemen-crisis",
+                tag: "Yemen Crisis",
                 location: "Sanaa, Yemen",
-                title: "Cung cấp sữa đặc trị và dinh dưỡng cho trẻ suy dinh dưỡng nặng",
-                desc: "Hàng triệu trẻ em tại Yemen đang phải đối mặt với nạn đói tồi tệ nhất thế kỷ. Chiến dịch này điều phối trực tiếp nguồn sữa y tế, lương thực giàu dinh dưỡng đến tận tay các bà mẹ có con nhỏ dưới 5 tuổi đang trong tình trạng báo động đỏ.",
+                title: "Emergency Food & Medical Aid for Malnourished Children",
+                desc: "Millions of children in Yemen are facing severe acute malnutrition due to ongoing conflict. This project delivers high-protein therapeutic milk, critical medical supplies, and urgent nutrition baskets directly to families in desperate need.",
                 image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80",
                 goal: 500000000,
                 raised: 410000000
             },
             {
-                id: "gaza-water",
-                tag: "Nguồn nước sạch",
-                location: "Dải Gaza",
-                title: "Lắp đặt hệ thống lọc nước sạch cho 5 trường học tị nạn",
-                desc: "Nguồn nước ô nhiễm là nguyên nhân chính gây ra dịch bệnh cho trẻ em tại các khu trại tập trung. Mục tiêu của chúng tôi là xây dựng và vận hành hệ thống lọc nước công nghiệp bằng năng lượng mặt trời giúp hàng ngàn học sinh có nước uống an toàn.",
+                id: "clean-water",
+                tag: "Water Crisis",
+                location: "Gaza Strip",
+                title: "Providing Clean & Safe Drinking Water Stations",
+                desc: "Clean water is a luxury for families living under blockade. We are building solar-powered water purification units and trucking clean, drinkable water to schools and heavily crowded refugee settlements to prevent deadly waterborne diseases.",
                 image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=80",
                 goal: 750000000,
                 raised: 280000000
             },
             {
-                id: "education-africa",
-                tag: "Chắp cánh tương lai",
+                id: "education-children",
+                tag: "Education",
                 location: "Nairobi, Kenya",
-                title: "Tặng 500 bộ máy tính cũ và học bổng công nghệ cho trẻ nghèo",
-                desc: "Giáo dục công nghệ là con đường nhanh nhất giúp trẻ em khu ổ chuột thoát nghèo bền vững. Dự án quyên góp kinh phí thu mua, sửa chữa máy tính cũ và trả lương cho các giáo viên tin học tình nguyện hướng dẫn các em học lập trình cơ bản.",
+                title: "Sponsor a Child's Education and School Meals",
+                desc: "Education is the ultimate way to break the cycle of poverty. Your donations fund complete school uniforms, learning materials, and nutritious daily hot lunches for vulnerable children living in underprivileged slum regions.",
                 image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80",
                 goal: 300000000,
                 raised: 290000000
@@ -175,9 +174,8 @@
         ];
 
         let selectedMoney = 1000000;
-        let currentCampaign = campaignsData[0]; // Mặc định hiển thị chiến dịch đầu tiên
+        let currentCampaign = campaignsData[0];
 
-        // Hàm hiển thị thông tin chiến dịch lên màn hình chính
         function renderActiveCampaign(campaign) {
             currentCampaign = campaign;
 
@@ -187,7 +185,6 @@
             document.getElementById('main-cam-title').innerText = campaign.title;
             document.getElementById('main-cam-desc').innerText = campaign.desc;
 
-            // Tính toán %
             const percent = Math.round((campaign.raised / campaign.goal) * 100);
             const formatRaised = new Intl.NumberFormat('vi-VN').format(campaign.raised);
             const formatGoal = new Intl.NumberFormat('vi-VN').format(campaign.goal);
@@ -195,26 +192,22 @@
             document.getElementById('main-cam-raised').innerText = `${formatRaised} VND`;
             document.getElementById('main-cam-percent').innerText = `${percent}%`;
             document.getElementById('main-cam-progress-bar').style.width = `${percent}%`;
-            document.getElementById('main-cam-goal').innerText = `Mục tiêu: ${formatGoal} VND`;
+            document.getElementById('main-cam-goal').innerText = `Goal: ${formatGoal} VND`;
 
-            // Đồng bộ tên chiến dịch sang Form Quyên Góp ở bên phải
             document.getElementById('donate-box-cam-title').innerText = campaign.title;
         }
 
-        // Hàm tạo danh sách các thẻ chiến dịch nhỏ ở hàng dưới
         function renderCampaignList() {
             const container = document.getElementById('campaign-list-container');
-            container.innerHTML = ""; // Xóa dữ liệu cũ
+            container.innerHTML = "";
 
             campaignsData.forEach(cam => {
                 const percent = Math.round((cam.raised / cam.goal) * 100);
                 const card = document.createElement('div');
                 card.className = "bg-white p-4 rounded-2xl border border-gray-200 hover:border-indigo-500 shadow-sm cursor-pointer transition flex gap-4 items-center";
                 
-                // Khi người dùng bấm vào thẻ nhỏ này
                 card.onclick = () => {
                     renderActiveCampaign(cam);
-                    // Cuộn màn hình lên phần form mượt mà
                     document.getElementById('campaigns-section').scrollIntoView({ behavior: 'smooth' });
                 };
 
@@ -224,8 +217,8 @@
                         <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">${cam.tag}</span>
                         <h4 class="text-sm font-bold text-gray-900 truncate">${cam.title}</h4>
                         <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
-                            <span>Tiến độ: <strong>${percent}%</strong></span>
-                            <span class="text-indigo-600 font-semibold">Xem chi tiết →</span>
+                            <span>Progress: <strong>${percent}%</strong></span>
+                            <span class="text-indigo-600 font-semibold">View →</span>
                         </div>
                     </div>
                 `;
@@ -233,7 +226,7 @@
             });
         }
 
-        // --- HÀM XỬ LÝ SỐ TIỀN TRÊN FORM THANH TOÁN BÊN PHẢI ---
+        // --- CODE XỬ LÝ THANH TOÁN ---
         function selectAmount(amount) {
             selectedMoney = amount;
             document.getElementById('custom-money').value = '';
@@ -254,7 +247,7 @@
             if(inputVal) {
                 selectedMoney = parseInt(inputVal);
                 document.querySelectorAll('.amt-btn').forEach(btn => {
-                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-600 text-sm";
+                    btn.className = "amt-btn py-3 border-2 border-gray-200 rounded-xl font-bold text-gray-700 hover:border-indigo-500 text-sm";
                 });
             } else {
                 selectedMoney = 0;
@@ -269,16 +262,15 @@
 
         function submitDonation() {
             if (selectedMoney <= 0) {
-                alert("Vui lòng chọn số tiền hợp lệ.");
+                alert("Please select a valid amount.");
                 return;
             }
-            alert(`Cảm ơn bạn! Khoản quyên góp ${new Intl.NumberFormat('vi-VN').format(selectedMoney)} VND dành cho chiến dịch:\n"${currentCampaign.title}" đã được ghi nhận.`);
+            alert(`Thank you! Your donation of ${new Intl.NumberFormat('vi-VN').format(selectedMoney)} VND for:\n"${currentCampaign.title}" has been captured.`);
         }
 
-        // KHỞI CHẠY LẦN ĐẦU KHI TRANG LOAD XONG
         window.onload = () => {
-            renderActiveCampaign(campaignsData[0]); // Chạy chiến dịch 1 mặc định
-            renderCampaignList(); // Đổ danh sách chiến dịch nhỏ
+            renderActiveCampaign(campaignsData[0]);
+            renderCampaignList();
         };
     </script>
 </body>
